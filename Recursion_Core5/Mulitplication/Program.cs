@@ -7,7 +7,7 @@ namespace Mulitplication
         static void Main(string[] args)
         {
             Console.WriteLine("Multiply");
-            for (int n = 1; n <= 10; n++)
+            for (int n = 5; n <= 10; n++)
                 Console.WriteLine(String.Format("5 * {0,2} is {1,2}", n, multiply(5, n)));
             Console.WriteLine();
 
@@ -21,10 +21,11 @@ namespace Mulitplication
         // 3 * 3 = 3 + (3 + 3) or 3 + 3 *2
         static int multiply(int x, int y)
         {
-            // every recursive function has a base case - the condition that causes it to stop
+            // Base case: If y is 0, return 0
             if (y == 1)
                 return x;
-            // when it's not the base case the function calls itself with a parameter value that approaches the base case
+            
+            // Recursive case: Otherwise, multiply x by (y - 1) and add x
             else
                 return x + multiply(x, y - 1);
         }
